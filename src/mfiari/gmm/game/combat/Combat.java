@@ -59,7 +59,9 @@ public class Combat extends AbstractCombat {
                 }
             }
         } while (adversaire.size() != 0 && !equipe.estKO());
-        jeu.gameOver(equipe, adversaire);
+        if (this.jeu != null) {
+            jeu.gameOver(equipe, adversaire);
+        }
     }
 
     @Override

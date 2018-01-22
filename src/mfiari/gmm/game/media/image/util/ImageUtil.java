@@ -19,22 +19,6 @@ public class ImageUtil extends Image{
         
     }
     
-    public BufferedImage getDrapeau (Langue langue) {
-        URL url = null;
-        switch (langue) {
-            case fr:
-                url = getClass().getResource("drapeaux_francais.jpg");
-                break;
-            case en:
-                url = getClass().getResource("drapeaux_englais.jpg");
-                break;
-            case de:
-                url = getClass().getResource("drapeau_allemand.jpg");
-                break;
-        }
-        return this.getImage(url, 100, 80);
-    }
-    
     public BufferedImage getLogo () {
         URL url = getClass().getResource("logo.png");
         return this.getImage(url);

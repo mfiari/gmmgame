@@ -5,20 +5,14 @@
 package mfiari.gmm.game.demarrage;
 
 import mfiari.gmm.game.Vues;
-import mfiari.gmm.game.connexionBD.Connexion;
 import mfiari.gmm.game.extra.MenuExtra;
 import mfiari.gmm.game.GmmJeu;
 import mfiari.gmm.game.liste.ListeDePerso;
-import mfiari.gmm.game.liste.ListeTec;
-import mfiari.gmm.game.perso.D_UNI;
-import mfiari.gmm.game.perso.Personnage;
 import mfiari.gmm.game.ville.Endroit;
 import mfiari.gmm.game.ville.Endroits;
 import java.util.ArrayList;
 import mfiari.lib.game.controlleur.ControlleurVue;
-import mfiari.lib.game.evenements.Evenement;
 import mfiari.lib.game.evenements.EvenementQuete;
-import mfiari.lib.game.liste.ListeDEndroit;
 import mfiari.lib.game.liste.ListeObjet;
 import mfiari.lib.game.texte.Langue;
 import mfiari.lib.game.texte.Texte;
@@ -172,7 +166,7 @@ public class Demarrage extends ControlleurVue {
                 case (1):
                     this.creationVille = new CreationVille();
                     this.creationEnnemie = new CreationEnnemie();
-                    this.creationObjet = new CreationObjet ();
+                    //this.creationObjet = new CreationObjet ();
                     this.creationTechnique = new CreationTechnique ();
                     nouvellePartie();
                     GmmJeu jeu = new GmmJeu();
