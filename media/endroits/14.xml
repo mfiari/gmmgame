@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endroit largeur="5" longueur="5" nom="salle auberge medieville" positionx="0" positiony="0" type="route">
+<sol type="herbe"/>
+<objet_endroits>
+<objet_endroit positionx="0" positiony="0" type="porte"/>
+<objet_endroit positionx="1" positiony="4" type="lit"/>
+<objet_endroit positionx="2" positiony="0" type="porte"/>
+<objet_endroit positionx="2" positiony="4" type="lit"/>
+<objet_endroit positionx="3" positiony="1" type="bureau"/>
+<objet_endroit positionx="3" positiony="2" type="bureau"/>
+<objet_endroit positionx="3" positiony="3" type="bureau"/>
+<objet_endroit positionx="4" positiony="1" type="bureau"/>
+<objet_endroit positionx="4" positiony="3" type="bureau"/>
+</objet_endroits>
+<batiments/>
+<gens/>
+</endroit>

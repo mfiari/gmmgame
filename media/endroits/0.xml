@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endroit largeur="10" longueur="10" nom="quartier habitant medieville" positionx="0" positiony="0" type="route">
+<sol type="herbe"/>
+<objet_endroits>
+<objet_endroit positionx="0" positiony="0" type="chemin"/>
+<objet_endroit positionx="0" positiony="1" type="mur"/>
+<objet_endroit positionx="0" positiony="2" type="arbre"/>
+<objet_endroit positionx="0" positiony="3" type="chemin"/>
+<objet_endroit positionx="0" positiony="4" type="chemin"/>
+<objet_endroit positionx="0" positiony="5" type="chemin"/>
+<objet_endroit positionx="0" positiony="6" type="arbre"/>
+<objet_endroit positionx="0" positiony="7" type="arbre"/>
+<objet_endroit positionx="0" positiony="8" type="chemin"/>
+<objet_endroit positionx="0" positiony="9" type="chemin"/>
+<objet_endroit positionx="4" positiony="0" type="arbre"/>
+<objet_endroit positionx="4" positiony="9" type="arbre"/>
+<objet_endroit positionx="5" positiony="0" type="arbre"/>
+<objet_endroit positionx="5" positiony="4" type="porte"/>
+<objet_endroit positionx="5" positiony="5" type="porte"/>
+<objet_endroit positionx="5" positiony="9" type="arbre"/>
+</objet_endroits>
+<batiments>
+<batiment positionx="1" positiony="0"/>
+<batiment positionx="2" positiony="0"/>
+<batiment positionx="2" positiony="8"/>
+<batiment positionx="3" positiony="1"/>
+</batiments>
+<gens/>
+</endroit>

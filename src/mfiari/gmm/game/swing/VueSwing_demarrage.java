@@ -4,13 +4,13 @@
  */
 package mfiari.gmm.game.swing;
 
-import mfiari.gmm.game.demarrage.Demarrage;
 import mfiari.gmm.game.media.image.util.ImageUtil;
 import mfiari.gmm.game.texte.TexteVueDemarrage;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import mfiari.gmm.game.controller.Demarrage;
 import mfiari.lib.game.clavier.ActionPerso;
 import mfiari.lib.game.clavier.CodeBouton;
 import mfiari.lib.game.clavier.KeyDispatcher;

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endroit largeur="6" longueur="6" nom="rez de chausse maison pepe" positionx="0" positiony="0" type="route">
+<sol type="herbe"/>
+<objet_endroits>
+<objet_endroit positionx="0" positiony="2" type="etagere"/>
+<objet_endroit positionx="0" positiony="3" type="etagere"/>
+<objet_endroit positionx="0" positiony="4" type="etagere"/>
+<objet_endroit positionx="1" positiony="0" type="lit"/>
+<objet_endroit positionx="2" positiony="5" type="porte"/>
+<objet_endroit positionx="4" positiony="1" type="bureau"/>
+</objet_endroits>
+<batiments/>
+<gens/>
+</endroit>

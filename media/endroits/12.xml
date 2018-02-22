@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endroit largeur="10" longueur="10" nom="Zone2 parc d'entrainement" positionx="0" positiony="0" type="route">
+<sol type="herbe"/>
+<objet_endroits>
+<objet_endroit positionx="0" positiony="0" type="arbre"/>
+<objet_endroit positionx="0" positiony="1" type="arbre"/>
+<objet_endroit positionx="0" positiony="6" type="arbre"/>
+<objet_endroit positionx="0" positiony="9" type="arbre"/>
+<objet_endroit positionx="1" positiony="0" type="arbre"/>
+<objet_endroit positionx="1" positiony="4" type="grand_chene"/>
+<objet_endroit positionx="1" positiony="9" type="arbre"/>
+<objet_endroit positionx="2" positiony="1" type="arbre"/>
+<objet_endroit positionx="4" positiony="3" type="arbre"/>
+<objet_endroit positionx="4" positiony="9" type="arbre"/>
+<objet_endroit positionx="5" positiony="0" type="arbre"/>
+<objet_endroit positionx="5" positiony="1" type="chemin"/>
+<objet_endroit positionx="5" positiony="2" type="chemin"/>
+<objet_endroit positionx="5" positiony="3" type="chemin"/>
+<objet_endroit positionx="5" positiony="4" type="chemin"/>
+<objet_endroit positionx="5" positiony="5" type="chemin"/>
+<objet_endroit positionx="5" positiony="6" type="arbre"/>
+<objet_endroit positionx="5" positiony="7" type="chemin"/>
+<objet_endroit positionx="5" positiony="9" type="arbre"/>
+</objet_endroits>
+<batiments/>
+<gens/>
+</endroit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<endroit largeur="10" longueur="10" nom="entre parc d'entrainement" positionx="0" positiony="0" type="route">
+<sol type="herbe"/>
+<objet_endroits>
+<objet_endroit positionx="0" positiony="1" type="bureau"/>
+<objet_endroit positionx="0" positiony="2" type="chemin"/>
+<objet_endroit positionx="0" positiony="3" type="chemin"/>
+<objet_endroit positionx="0" positiony="4" type="bureau"/>
+<objet_endroit positionx="1" positiony="1" type="bureau"/>
+<objet_endroit positionx="1" positiony="2" type="bureau"/>
+<objet_endroit positionx="1" positiony="4" type="bureau"/>
+<objet_endroit positionx="5" positiony="2" type="porte"/>
+<objet_endroit positionx="5" positiony="3" type="porte"/>
+</objet_endroits>
+<batiments/>
+<gens/>
+</endroit>

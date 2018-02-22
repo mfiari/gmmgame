@@ -5,7 +5,7 @@
 package mfiari.gmm.game;
 
 import mfiari.gmm.game.combat.AbstractCombat;
-import mfiari.gmm.game.demarrage.Demarrage;
+import mfiari.gmm.game.controller.Demarrage;
 import mfiari.gmm.game.extra.DuelExtra;
 import mfiari.gmm.game.extra.MenuExtra;
 import mfiari.gmm.game.menu.Menu;

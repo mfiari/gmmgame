@@ -5,6 +5,9 @@
 
 package mfiari.gmm.game.demarrage;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import mfiari.gmm.game.objet.Objet_endroit_observable;
 import mfiari.gmm.game.objet.Objet_endroit_classique;
 import mfiari.gmm.game.objet.Objet_endroit_coffre;
@@ -15,6 +18,23 @@ import mfiari.gmm.game.ville.Endroit;
 import mfiari.gmm.game.ville.Endroits;
 import mfiari.gmm.game.ville.Sol;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import mfiari.lib.game.liste.ListeDEndroit;
+import mfiari.lib.game.objet.ObjetEndroit;
+import mfiari.lib.game.personnage.Gens;
+import mfiari.lib.game.position.Position;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 
 /**
  *
@@ -459,6 +479,118 @@ public class CreationVille {
 
     public ArrayList<Endroit> getEndroit () {
         return this.carte_gmm;
+    }
+    
+    public void createXMLFile () {
+        ListeDEndroit endroits = new ListeDEndroit();
+        endroits.ajouterEndroit(Endroits.quartierHabitant_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.bas_maisonMarco_quartierHabitant_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.chambreMarco_maisonMarco_quartierHabitant_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.bas_maisonPepe_quartierHabitant_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.bas_maisonMok_quartierHabitant_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.bas_maisonVard_quartierHabitant_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.salle_bibliotheque_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.salle_ecole_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.cour_ecole_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.salle_parcDEntrainement_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.zone1_parcDEntrainement_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.zone2_parcDEntrainement_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.salle_magasin_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.salle_auberge_quartierPrincipal_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.quartierChateau_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.chateau_quartierChateau_medieville_zoneMedieville_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.batcity_zoneBatcity_zoneMedicoru_continent);
+        endroits.ajouterEndroit(Endroits.grandeForet);
+        endroits.ajouterEndroit(Endroits.village_guerrier);
+        endroits.ajouterEndroit(Endroits.fort_bandit);
+        endroits.ajouterEndroit(Endroits.immortalis);
+        endroits.ajouterEndroit(Endroits.foret_sorciere);
+        endroits.ajouterEndroit(Endroits.temple_goroku);
+        endroits.ajouterEndroit(Endroits.foret_vivante);
+        endroits.ajouterEndroit(Endroits.montagne_felin);
+        endroits.ajouterEndroit(Endroits.temple_foudroineau);
+        endroits.ajouterEndroit(Endroits.defendere);
+        endroits.ajouterEndroit(Endroits.village_oiseau);
+        endroits.ajouterEndroit(Endroits.village_serpent);
+        endroits.ajouterEndroit(Endroits.temple_guimelard);
+        endroits.ajouterEndroit(Endroits.temple_espancien);
+        endroits.ajouterEndroit(Endroits.mausole_fuleau);
+        endroits.ajouterEndroit(Endroits.temple_galactika);
+        endroits.ajouterEndroit(Endroits.temple_medicoru);
+        endroits.ajouterEndroit(Endroits.village_felin);
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = factory.newDocumentBuilder();
+            
+            for (int k = 0 ; k < endroits.size() ; k++) {
+                mfiari.lib.game.ville.Endroit e = (mfiari.lib.game.ville.Endroit) endroits.getEndroit(k);
+                Document doc = db.newDocument();
+                Element endroitElement = doc.createElement("endroit");
+                endroitElement.setAttribute("nom", e.getNom());
+                endroitElement.setAttribute("longueur", String.valueOf(e.getLongueur()));
+                endroitElement.setAttribute("largeur", String.valueOf(e.getLongueur()));
+                endroitElement.setAttribute("positionx", String.valueOf(e.getPosition().getPositionX()));
+                endroitElement.setAttribute("positiony", String.valueOf(e.getPosition().getPositionY()));
+                endroitElement.setAttribute("type", "route");
+                /*endroitElement.setAttribute("terrain", e.getTerrain().getType().toString());*/
+                
+                Element solElement = doc.createElement("sol");
+                solElement.setAttribute("type", "herbe");
+                endroitElement.appendChild(solElement);
+                
+                Element objetEndroitsElement = doc.createElement("objet_endroits");
+                Element batimentsElement = doc.createElement("batiments");
+                Element gensElement = doc.createElement("gens");
+                for (int i = 0; i < e.getLargeur(); i++) {
+                    for (int j = 0; j < e.getLongueur(); j++) {
+                        Position p = new Position(i, j);
+                        if (e.aEndroit(p) != null) {
+                            mfiari.lib.game.ville.Endroit batiment = (mfiari.lib.game.ville.Endroit)e.aEndroit(p);
+                            Element batimentElement = doc.createElement("batiment");
+                            /*batimentElement.setAttribute("type", this.getNomImageBatimentByClass(batiment));*/
+                            batimentElement.setAttribute("positionx", String.valueOf(p.getPositionX()));
+                            batimentElement.setAttribute("positiony", String.valueOf(p.getPositionY()));
+                            batimentsElement.appendChild(batimentElement);
+                        } else if (e.aGens(p) != null) {
+                            Gens gens = e.aGens(p);
+                            Element habitantElement = doc.createElement("habitant");
+                            habitantElement.setAttribute("nom", gens.getNom());
+                            habitantElement.setAttribute("positionx", String.valueOf(p.getPositionX()));
+                            habitantElement.setAttribute("positiony", String.valueOf(p.getPositionY()));
+                            gensElement.appendChild(habitantElement);
+                        } else if (e.aObjetEndroit(p) != null) {
+                            ObjetEndroit objet_endroit = e.aObjetEndroit(p);
+                            Element objetEndroitElement = doc.createElement("objet_endroit");
+                            objetEndroitElement.setAttribute("type", objet_endroit.getType().toString());
+                            objetEndroitElement.setAttribute("positionx", String.valueOf(p.getPositionX()));
+                            objetEndroitElement.setAttribute("positiony", String.valueOf(p.getPositionY()));
+                            objetEndroitsElement.appendChild(objetEndroitElement);
+                        }
+                    }
+                }
+                endroitElement.appendChild(objetEndroitsElement);
+                endroitElement.appendChild(batimentsElement);
+                endroitElement.appendChild(gensElement);
+                doc.appendChild(endroitElement);
+                
+                FileWriter fileWriter = new FileWriter(new File("media/endroits/"+k+".xml"));
+                TransformerFactory tf = TransformerFactory.newInstance();
+                Transformer transformer = tf.newTransformer();
+                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+                transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+                transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+                transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+
+                transformer.transform(new DOMSource(doc), new StreamResult(fileWriter));
+            }
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(CreationVille.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException | TransformerException ex) {
+            throw new RuntimeException("Error converting to String", ex);
+        } catch (IOException ex) {
+            Logger.getLogger(CreationVille.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
    
